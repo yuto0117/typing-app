@@ -304,7 +304,7 @@ export default function Dashboard({ auth, activeQuestions }) {
 
               <Pause isPaused={isPaused} Home={Home} Resume={Resume} />
 
-              <TimeLimit ModalLimitOpen={ModalLimitOpen} timeLimit={timeLimit} setTimeLimit={setTimeLimit} setModalLimitOpen={setModalLimitOpen} Mode={Mode} setMode={setMode} modetimed={modetimed} setModeTimed={setModeTimed} userid={auth.user.id} handleConvert={handleConvert} />
+              <TimeLimit ModalLimitOpen={ModalLimitOpen} TimeLimit={timeLimit} setTimeLimit={setTimeLimit} setModalLimitOpen={setModalLimitOpen} Mode={Mode} setMode={setMode} modetimed={modetimed} setModeTimed={setModeTimed} userid={auth.user.id} handleConvert={handleConvert} />
 
               <Results Restart={Restart} Home={Home} texts={typing} mistakes={mistakes} handleConvert={handleConvert} result={result} TypingTime={TypingTime} />
 

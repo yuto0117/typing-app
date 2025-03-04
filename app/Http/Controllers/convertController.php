@@ -26,26 +26,16 @@ class convertController extends Controller
             
             $command = "python $py_path\Python\kanji_to_romaji.py $kanjiArrayJson";
             
-
+            
             exec($command , $outputs); 
-               
             
 
             $flattenedArray = $outputs[0];
-
+            
             $trimmedString = trim($flattenedArray, "[]");
 
             $elements = explode(',', $trimmedString);
         
-
-            // $trimmedElements = array_map(function($element) {
-            //     // シングルクォートとダブルクォートのいずれかで囲まれている場合
-            //     if ((substr($element, 0, 1) === "'" && substr($element, -1) === "'") ||
-            //         (substr($element, 0, 1) === '"' && substr($element, -1) === '"')) {
-            //           $element = substr($element, 1, -1); // 外側のクォートを削除
-            //     }
-            //     return trim($element, " "); // 前後の空白とクォートを取り除く
-            // }, $elements);
 
             $trimmedElements = array_map(function($element) {
 

@@ -26,13 +26,12 @@ const TimeLimit = ({ ModalLimitOpen, timeLimit, setTimeLimit, Mode, setMode, use
 
 
     useEffect(() => {
-
         if (isConvertAllowed) {
             handleConvert();
             setisConvertAllowed(false);
         }
 
-    }, [timeLimit]);
+    }, [isConvertAllowed]);
 
     const timed = () => {
         setMode(false);
@@ -43,18 +42,17 @@ const TimeLimit = ({ ModalLimitOpen, timeLimit, setTimeLimit, Mode, setMode, use
         e.preventDefault();
         try {
             const timeLimitInSeconds = parseInt(minutes) * 60 + parseInt(seconds);
-            // const response = await axios.post('/api/time-limit', { timeLimit: timeLimitInSeconds, userid: userid });
             setTimeLimit(timeLimitInSeconds);
-            setisConvertAllowed(true);
+            setisConvertAllowed(true); 
         } catch (error) {
             console.error('There was an error saving the time limit!', error);
         }
     };
 
     const handleunlimitedSubmit = () => {
+        console.log("aaa");
         try {
             const timeLimitInSeconds = parseInt(0) * 60 + parseInt(0);
-            // const response = await axios.post('/api/time-limit', { timeLimit: timeLimitInSeconds, userid: userid });
             setTimeLimit(timeLimitInSeconds);
             setisConvertAllowed(true);
         } catch (error) {
@@ -65,9 +63,9 @@ const TimeLimit = ({ ModalLimitOpen, timeLimit, setTimeLimit, Mode, setMode, use
 
 
     const handle1minutesSubmit = () => {
+        console.log("aaa");
         try {
             const timeLimitInSeconds = parseInt(1) * 60 + parseInt(0);
-            // const response = await axios.post('/api/time-limit', { timeLimit: timeLimitInSeconds, userid: userid });
             setTimeLimit(timeLimitInSeconds);
             setisConvertAllowed(true);
         } catch (error) {
